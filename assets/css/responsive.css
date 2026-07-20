@@ -1,0 +1,676 @@
+/* Shared responsive overrides */
+
+:root {
+    --masthead-offset: 0px;
+}
+
+body {
+    padding-top: var(--masthead-offset);
+}
+
+.masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #fff;
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    place-content: center;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.masthead.is-open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.masthead.is-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.masthead.is-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.banner-section {
+    padding: clamp(42px, 7vw, 82px) 0;
+}
+
+.banner-section .container > .d-flex {
+    gap: clamp(28px, 5vw, 64px);
+}
+
+.banner-section .banner-slider-container {
+    flex: 0 0 min(42vw, 420px);
+}
+
+.banner-section .banner-slider-for img {
+    object-fit: cover;
+}
+
+.popular-routes-section .popular-routes-slider-for .d-grid.col-2 {
+    align-items: center;
+    gap: clamp(28px, 5vw, 56px);
+}
+
+.popular-routes-section .popular-routes-slider-for ul {
+    flex-wrap: nowrap;
+}
+
+.popular-routes-section .popular-routes-slider-for ul li {
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.popular-routes-section .popular-routes-slider-nav .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.testimonials .testimonial-slider .slick-track {
+    display: flex;
+}
+
+.testimonials .testimonial-slider .slick-slide {
+    height: auto;
+}
+
+.testimonials .testimonial-slider .slick-active {
+    opacity: 1;
+}
+
+.testimonials .testimonial-slider .slick-slide > div {
+    height: 100%;
+}
+
+.testimonials .reviews {
+    min-height: 245px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .container {
+        width: 100%;
+        padding-inline: 24px;
+    }
+
+    .masthead .container > div {
+        border-radius: 22px;
+        gap: 18px;
+    }
+
+    .masthead nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .popular-routes-section .popular-routes-slider-nav {
+        width: min(620px, 58vw);
+    }
+
+    .popular-routes-section .popular-routes-slider-nav img {
+        width: 150px;
+    }
+
+    .banner-section .banner-slider-container {
+        width: 340px;
+    }
+
+    .team-members-div {
+        flex-wrap: wrap;
+        gap: 28px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding-inline: 20px;
+    }
+
+    .masthead .container > div {
+        flex-direction: column;
+        align-items: center;
+        border-radius: 18px;
+        padding: 16px;
+    }
+
+    .masthead .container > div {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .masthead .logo-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-toggle {
+        display: grid;
+        justify-self: end;
+    }
+
+    .masthead nav,
+    .masthead .login {
+        display: none;
+    }
+
+    .masthead.is-open nav,
+    .masthead.is-open .login {
+        display: block;
+    }
+
+    .masthead nav ul,
+    .tripmate-footer .container > div,
+    .banner-section .container > .d-flex,
+    .plan-banner-section .container > .d-flex,
+    .contact-contact-section .container > .d-grid,
+    .about-about-section .container > .d-grid,
+    .how-it-works-section .container > .d-grid,
+    .planning-section .container > .d-grid,
+    .back-section .container > .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .masthead .login {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    .masthead nav,
+    .masthead .login {
+        grid-column: 1 / -1;
+    }
+
+    .d-grid.col-4,
+    .d-grid.col-3,
+    .d-grid.col-2,
+    .d-grid.col-2-1,
+    .d-grid.col-1-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .banner-section .container > .d-flex,
+    .plan-banner-section .container > .d-flex,
+    .planning-section .container > .d-grid,
+    .about-about-section .container > .d-grid,
+    .how-it-works-section .container > .d-grid,
+    .contact-contact-section .container > .d-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .banner-section .text-block,
+    .plan-banner-section .text-block {
+        max-width: none;
+        text-align: center;
+    }
+
+    .banner-section {
+        padding: 38px 0 44px;
+    }
+
+    .banner-section .banner-slider-container,
+    .plan-banner-section img,
+    .planning-section img {
+        width: min(100%, 560px);
+        margin-inline: auto;
+    }
+
+    .banner-section .banner-slider-container {
+        flex-basis: auto;
+    }
+
+    .feature-section .feature {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .feature-section .container .feature-text,
+    .feature-section .container .features-one,
+    .feature-section .container .features-two,
+    .feature-section .container .features-three,
+    .feature-section .container .features-four,
+    .feature-section .container .feature-button {
+        grid-area: auto;
+    }
+
+    .popular-routes-section .popular-routes-slider-container {
+        height: auto;
+        padding-bottom: 120px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for .d-grid.col-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .popular-routes-section .popular-routes-slider-for img {
+        width: 100%;
+        height: 320px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for .popular-routes-text {
+        text-align: center;
+    }
+
+    .popular-routes-section .popular-routes-slider-nav {
+        width: 100%;
+        left: 0;
+        right: auto;
+        bottom: 0;
+    }
+
+    .popular-routes-section .popular-routes-slider-nav img {
+        width: 120px;
+        height: 80px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for ul {
+        justify-content: center;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for ul li {
+        margin: 6px 0 12px;
+        flex: 0 0 auto;
+    }
+
+    .vacation-section .d-grid.col-4.gap-20 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vacation-section .d-grid.col-4.gap-20 img {
+        transform: none !important;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-inline: 0;
+    }
+
+    .tripmate-footer {
+        text-align: center;
+    }
+
+    .tripmate-footer .container > div {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .tripmate-footer .footer-links ul,
+    .tripmate-footer .footer-social a {
+        padding: 0;
+        transform: none;
+    }
+
+    .tripmate-footer .footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .tripmate-footer .footer-social h4 {
+        flex-basis: 100%;
+    }
+
+    #map {
+        height: 62vh;
+        min-height: 420px;
+    }
+
+    .stopagges-section .container > .d-flex,
+    .feedback-content .d-flex,
+    #yesFeedback .d-flex,
+    #issueContainer .d-flex {
+        flex-wrap: wrap;
+    }
+
+    #weather-info > div {
+        width: min(100%, 320px);
+    }
+
+    .result-section .container > .d-flex,
+    .hotels-section .container > .d-flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #results,
+    #hotel-list {
+        flex-basis: auto !important;
+        padding-inline: 0;
+    }
+
+    .filter-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        margin: 20px 0;
+    }
+
+    .card {
+        align-items: flex-start;
+    }
+
+    .image-placeholder {
+        width: 220px;
+        min-width: 220px;
+        margin-right: 24px;
+    }
+
+    .contact-contact-section div.d-grid.col-3.gap-20,
+    .about-about-section .impact-div,
+    .why-choose-us-section .why-cards-div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-map-section .map,
+    .contact-map-section .map iframe {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        padding-inline: 14px;
+    }
+
+    .masthead .container > div {
+        align-items: stretch;
+        gap: 14px;
+        border-radius: 14px;
+    }
+
+    .masthead .container > div {
+        grid-template-columns: 1fr auto;
+    }
+
+    .masthead .logo-block {
+        justify-content: flex-start;
+    }
+
+    .masthead .logo-block .logo-design {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 20px;
+    }
+
+    .masthead .logo-block .name-design {
+        font-size: 32px;
+    }
+
+    .masthead nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .masthead.is-open nav ul {
+        display: grid;
+    }
+
+    .masthead nav li a,
+    .masthead .login {
+        display: block;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .masthead .login {
+        max-width: none;
+        color: #fff;
+        box-shadow: none;
+    }
+
+    .d-grid.col-4,
+    .d-grid.col-3,
+    .d-grid.col-2,
+    .d-grid.col-2-1,
+    .d-grid.col-1-2,
+    .feature-section .feature,
+    .vacation-section .d-grid.col-4.gap-20,
+    .contact-contact-section div.d-grid.col-3.gap-20,
+    .about-about-section .impact-div,
+    .why-choose-us-section .why-cards-div,
+    .tripmate-footer .container > div {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-section,
+    .feature-section,
+    .popular-routes-section,
+    .faq-section,
+    .testimonials,
+    .plan-banner-section,
+    .planning-section,
+    .vacation-section,
+    .about-about-section,
+    .how-it-works-section,
+    .meet-our-team-section,
+    .contact-contact-section,
+    .contact-map-section {
+        padding-block: 34px;
+    }
+
+    .banner-section .banner-slider-container,
+    .banner-section .banner-slider-for img {
+        height: 280px;
+    }
+
+    .banner-section .banner-slider-nav {
+        width: 210px;
+        bottom: 12px;
+    }
+
+    .banner-section .banner-slider-nav img {
+        width: 44px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for img {
+        height: 260px;
+    }
+
+    .popular-routes-section .popular-routes-slider-nav img {
+        width: 92px;
+        height: 64px;
+    }
+
+    .popular-routes-section .popular-routes-slider-container {
+        padding-bottom: 94px;
+    }
+
+    .testimonials .reviews {
+        min-height: 220px;
+    }
+
+    .trip-planning__form-group,
+    .budget,
+    .time {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .trip-planning__form-group input[type="text"],
+    .trip-planning__form-group input[type="date"] {
+        width: 100%;
+    }
+
+    fieldset label {
+        display: block;
+        margin-right: 0;
+    }
+
+    .search-container {
+        padding: 10px 14px;
+        border-radius: 16px;
+        gap: 8px;
+    }
+
+    .search-container i {
+        margin-right: 4px;
+    }
+
+    .search-container input {
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    .search-container .filter-toggle-btn {
+        width: auto;
+        padding: 8px;
+    }
+
+    .card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 14px;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        min-width: 0;
+        height: 210px;
+        margin-right: 0;
+    }
+
+    .property-name {
+        font-size: 20px;
+    }
+
+    .filter-sidebar {
+        padding: 20px 16px;
+        max-height: none;
+    }
+
+    #priceRange {
+        width: 100%;
+    }
+
+    #map {
+        height: 55vh;
+        min-height: 340px;
+        border-radius: 8px;
+    }
+
+    .leaflet-routing-container {
+        max-width: calc(100vw - 40px);
+        max-height: 220px;
+        overflow: auto;
+        font-size: 12px;
+    }
+
+    .travel-score-bar-container {
+        width: 100%;
+    }
+
+    .back-section .container > .d-flex {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .back-section .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .feedback-content {
+        margin-inline: 14px;
+        padding: 16px;
+    }
+
+    .star {
+        font-size: 26px;
+    }
+
+    .contact-map-section .map iframe {
+        height: 320px;
+    }
+
+    .page-slider {
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .masthead nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-section .banner-slider-container,
+    .banner-section .banner-slider-for img,
+    .popular-routes-section .popular-routes-slider-for img,
+    .image-placeholder {
+        height: 230px;
+    }
+
+    .banner-section .banner-slider-nav {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .popular-routes-section .popular-routes-slider-for ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .popular-routes-section .popular-routes-slider-for ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .search-container {
+        flex-wrap: wrap;
+    }
+
+    .search-container input {
+        flex-basis: calc(100% - 50px);
+    }
+
+    .search-container button {
+        min-height: 36px;
+    }
+
+    #weather-info {
+        padding: 12px;
+    }
+
+    #weather-info > div {
+        height: auto;
+        min-height: 210px;
+        padding: 18px;
+    }
+}
